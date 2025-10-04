@@ -9,140 +9,147 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <!-- Main StackPanel that holds the entire content -->
-        <StackPanel Orientation="Horizontal"  >
+    <!-- Main StackPanel that holds the entire content -->
+    <StackPanel Orientation="Horizontal"  >
 
-            <!-- This StackPanel contains the company and the customer details header -->
-            <StackPanel>
-                <TextBlock x:Name="companyheaderTextBlock" HorizontalAlignment="Center" Margin="10" Text="Customer Vehicle Calculator App" FontSize="24"/>
-                <TextBlock x:Name="customerDetailsTextBlock" HorizontalAlignment="Center" Margin="10" Text="Customer Details" FontSize="16"/>
+        <!-- This StackPanel contains the company and the customer details header -->
+        <StackPanel>
+            <TextBlock x:Name="companyheaderTextBlock" HorizontalAlignment="Center" Margin="10" Text="Customer Vehicle Calculator App" FontSize="24"/>
+            <TextBlock x:Name="customerDetailsTextBlock" HorizontalAlignment="Center" Margin="10" Text="Customer Details" FontSize="16"/>
 
-                <!-- This StackPanel contains the customer's name -->
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock x:Name="customerNameTextBlock" VerticalAlignment="Center" Margin="10" Text="Customer Name" Width="108"/>
-                    <TextBox x:Name="customerNameTextBox" PlaceholderText="Enter Customer Name" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" Text="" Width="155" />
-                </StackPanel>
-
-                <!-- This StackPanel contains the customer's phone number -->
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock x:Name="phoneTextBlock" VerticalAlignment="Center" Margin="10" Text="Customer Phone" Width="107"/>
-                    <TextBox x:Name="phoneTextBox" PlaceholderText="Enter Phone Number" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" Text="" Width="155"/>
-                </StackPanel>
-
-                <!-- This StackPanel contains the customer's vehicle price -->
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock x:Name="vehiclePriceTextBlock" VerticalAlignment="Center" Margin="10" Text="Vehicle Price" Width="109"/>
-                    <TextBox x:Name="vehiclePriceTextBox" PlaceholderText="Enter Vehicle Price" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" Text="" Width="155"/>
-                </StackPanel>
-
-                <!-- This StackPanel contains the trade in car -->
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock x:Name="tradeInTextBlock" VerticalAlignment="Center" Margin="10" Text="Less Trade In" Width="109" />
-                    <TextBox x:Name="tradeInTextBox" PlaceholderText="Enter Trade in Value" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" Text="" Width="155" />
-                </StackPanel>
-
-                <!--Calculations-->
-                <TextBlock x:Name="calculationsTextBlock" HorizontalAlignment="Center" Margin="10" Text="Calculations" FontSize="16"/>
-
-                <!-- This StackPanel contains the sub Amount -->
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock x:Name="subAmountTextBlock" VerticalAlignment="Center" Margin="10" Text="sub Amount" Width="107" />
-                    <TextBox x:Name="subAmountTextBox" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" Text="" Width="155"/>
-                </StackPanel>
-
-                <!-- This StackPanel contains the GST Amount -->
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock x:Name="gstAmountTextBlock" VerticalAlignment="Center" Margin="10" Text="GST Amount" Width="108" />
-                    <TextBox x:Name="gstAmountTextBox" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" Text="" Width="155"/>
-                </StackPanel>
-
-                <!-- This StackPanel contains the final amount -->
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock x:Name="finalAmountTextBlock" VerticalAlignment="Center" Margin="10" Text="Final Amount" Width="109"/>
-                    <TextBox x:Name="finalAmountTextBox" HorizontalAlignment="Center" Margin="10" Text="" Width="155"/>
-                </StackPanel>
-
-                <!-- Vehicle Warranty Dropdown -->
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock x:Name="warrantyTextBlock" VerticalAlignment="Center" Margin="10" Text="Vehicle Warranty" Width="109"/>
-                    <ComboBox x:Name="warrantyComboBox" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" Width="220">
-                        <ComboBoxItem Content="1 Year (No charge)" />
-                        <ComboBoxItem Content="2 Years (5% of vehicle cost)" />
-                        <ComboBoxItem Content="3 Years (10% of vehicle cost)" />
-                        <ComboBoxItem Content="5 Years (20% of vehicle cost)" />
-                    </ComboBox>
-                </StackPanel>
-
-                <!-- Optional Extras -->
-                <StackPanel Margin="5" >
-                    <TextBlock x:Name="optionalExtrasTextBlock" HorizontalAlignment="Center" Margin="5" Text="Optional Extras" FontSize="16"/>
-                    <CheckBox x:Name="windowTintingCheckBox" Content="Window Tinting ($150)"/>
-                    <CheckBox x:Name="ducoProtectionCheckBox" Content="Duco Protection ($180)"/>
-                    <CheckBox x:Name="floorMatsCheckBox" Content="Floor Mats ($320)"/>
-                    <CheckBox x:Name="deluxeSoundSystemCheckBox" Content="Deluxe Sound System ($350)"/>
-                </StackPanel>
-
-
+            <!-- This StackPanel contains the customer's name -->
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="customerNameTextBlock" VerticalAlignment="Center" Margin="10" Text="Customer Name" Width="108"/>
+                <TextBox x:Name="customerNameTextBox" PlaceholderText="Enter Customer Name" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" Text="" Width="155" />
             </StackPanel>
 
-            <StackPanel>
-
-
-                <!-- Insurance Policy Switch (Yes/No) -->
-                <StackPanel>
-                    <TextBlock x:Name="insurancePolicyTextBlock" HorizontalAlignment="Center" Margin="10" Text="Insurance Policy" FontSize="16"/>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                        <ToggleSwitch x:Name="insuranceToggleSwitch" OffContent="No" OnContent="Yes" IsOn="False" VerticalAlignment="Center" Width="85"/>
-                    </StackPanel>
-
-                    <TextBlock x:Name="ageTextBlock" HorizontalAlignment="Center" Text="Select Age for Insurance Pricing" FontSize="14"/>
-
-                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-                        <!-- RadioButton for drivers under 25 -->
-                        <RadioButton x:Name="under25RadioButton" Content="Drivers under age 25 may purchase 1 year insurance for 20% of vehicle price" VerticalAlignment="Center" GroupName="ageGroup"/>
-
-                        <!-- RadioButton for drivers 25 or older -->
-                        <RadioButton x:Name="over25RadioButton" Content="Drivers 25 or Older may purchase for 10% of vehicle price" VerticalAlignment="Center" GroupName="ageGroup"/>
-                    </StackPanel>
-                </StackPanel>
-
-                <!-- Collection Date -->
-                <StackPanel Orientation="Horizontal" Margin="5" >
-                    <TextBlock x:Name="collectionDateTextBlock" VerticalAlignment="Center" Text="Collection Date" Width="110"/>
-                    <DatePicker x:Name="collectionDatePicker"/>
-                </StackPanel>
-
-                <!-- Pickup Time -->
-                <StackPanel Orientation="Horizontal" Margin="5">
-                    <TextBlock x:Name="pickupTimeTextBlock" VerticalAlignment="Center" Text="Pickup Time" Width="110"/>
-                    <TimePicker x:Name="pickupTimePicker" VerticalAlignment="Center" />
-                </StackPanel>
-
-                <!-- This StackPanel contains the buttons: Save, Reset and Calculate -->
-                <StackPanel Orientation="Horizontal">
-                    <Button x:Name="saveButton" Content="Save" Margin="10" Background="SeaGreen" Foreground="White" Width="80" Click="saveButton_Click"/>
-                    <Button x:Name="resetButton" Content="Reset" Margin="10" Background="SeaGreen" Foreground="White" Width="80" Click="resetButton_Click"/>
-                    <Button x:Name="summaryButton" Content="Summary" Margin="10" Background="SeaGreen" Foreground="White" Width="80" Click="summaryButton_Click"/>
-                </StackPanel>
-
-
-                <!-- This StackPanel containing a TextBlock for displaying the summary details -->
-                <StackPanel>
-                    <TextBlock x:Name="summaryTextBlock" HorizontalAlignment="Center" Margin="10" FontSize="16" Height="400" Text=""/>
-                </StackPanel>
+            <!-- This StackPanel contains the customer's phone number -->
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="phoneTextBlock" VerticalAlignment="Center" Margin="10" Text="Customer Phone" Width="107"/>
+                <TextBox x:Name="phoneTextBox" PlaceholderText="Enter Phone Number" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" Text="" Width="155"/>
             </StackPanel>
-            <StackPanel VerticalAlignment="Center">
 
-                <!-- This StackPanel contains a car image that was required by the Dodgy Brothers -->
-                <StackPanel Margin="10">
-                    <Image x:Name="carImage" Source="Images\cars.jpg" Height="300" Width="388"/>
-                </StackPanel>
+            <!-- This StackPanel contains the customer's vehicle price -->
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="vehiclePriceTextBlock" VerticalAlignment="Center" Margin="10" Text="Vehicle Price" Width="109"/>
+                <TextBox x:Name="vehiclePriceTextBox" PlaceholderText="Enter Vehicle Price" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" Text="" Width="155"/>
+            </StackPanel>
 
-                <!-- Developer Information -->
-                <StackPanel>
-                    <TextBlock x:Name="developerTextBlock" Text="Develop by Gerson Antunes" FontSize="8" HorizontalAlignment="Right"/>
-                </StackPanel>
+            <!-- This StackPanel contains the trade in car -->
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="tradeInTextBlock" VerticalAlignment="Center" Margin="10" Text="Less Trade In" Width="109" />
+                <TextBox x:Name="tradeInTextBox" PlaceholderText="Enter Trade in Value" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" Text="" Width="155" />
+            </StackPanel>
+
+            <!--Calculations-->
+            <TextBlock x:Name="calculationsTextBlock" HorizontalAlignment="Center" Margin="10" Text="Calculations" FontSize="16"/>
+
+            <!-- This StackPanel contains the sub Amount -->
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="subAmountTextBlock" VerticalAlignment="Center" Margin="10" Text="sub Amount" Width="107" />
+                <TextBox x:Name="subAmountTextBox" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" Text="" Width="155"/>
+            </StackPanel>
+
+            <!-- This StackPanel contains the GST Amount -->
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="gstAmountTextBlock" VerticalAlignment="Center" Margin="10" Text="GST Amount" Width="108" />
+                <TextBox x:Name="gstAmountTextBox" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" Text="" Width="155"/>
+            </StackPanel>
+
+            <!-- This StackPanel contains the final amount -->
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="finalAmountTextBlock" VerticalAlignment="Center" Margin="10" Text="Final Amount" Width="109"/>
+                <TextBox x:Name="finalAmountTextBox" HorizontalAlignment="Center" Margin="10" Text="" Width="155"/>
+            </StackPanel>
+
+            <!-- Vehicle Warranty Dropdown -->
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="warrantyTextBlock" VerticalAlignment="Center" Margin="10" Text="Vehicle Warranty" Width="109"/>
+                <ComboBox x:Name="warrantyComboBox" SelectedIndex="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" Width="220">
+                    <ComboBoxItem Content="1 Year (No charge)" />
+                    <ComboBoxItem Content="2 Years (5% of vehicle cost)" />
+                    <ComboBoxItem Content="3 Years (10% of vehicle cost)" />
+                    <ComboBoxItem Content="5 Years (20% of vehicle cost)" />
+                </ComboBox>
+            </StackPanel>
+
+            <!-- Optional Extras -->
+            <StackPanel Margin="5" >
+                <TextBlock x:Name="optionalExtrasTextBlock" HorizontalAlignment="Center" Margin="5" Text="Optional Extras" FontSize="16"/>
+                <CheckBox x:Name="windowTintingCheckBox" Content="Window Tinting ($150)"/>
+                <CheckBox x:Name="ducoProtectionCheckBox" Content="Duco Protection ($180)"/>
+                <CheckBox x:Name="floorMatsCheckBox" Content="Floor Mats ($320)"/>
+                <CheckBox x:Name="deluxeSoundSystemCheckBox" Content="Deluxe Sound System ($350)"/>
             </StackPanel>
         </StackPanel>
-    </Grid>
+
+        <StackPanel>
+
+            <!-- Insurance Policy Switch (Yes/No) -->
+            <StackPanel>
+                <TextBlock x:Name="insurancePolicyTextBlock" HorizontalAlignment="Center" Margin="10" Text="Insurance Policy" FontSize="16"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <ToggleSwitch x:Name="insuranceToggleSwitch" Toggled="insuranceToggleSwitch_Toggled" OffContent="No" OnContent="Yes" IsOn="False" VerticalAlignment="Center" Width="85"/>
+                </StackPanel>
+
+                <TextBlock x:Name="ageTextBlock" HorizontalAlignment="Center" Text="Select Age for Insurance Pricing" FontSize="14"/>
+
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                    <!-- RadioButton for drivers under 25 -->
+                    <RadioButton x:Name="under25RadioButton" Content="Drivers under age 25 may purchase 1 year insurance for 20% of vehicle price" VerticalAlignment="Center" GroupName="ageGroup"/>
+
+                    <!-- RadioButton for drivers 25 or older -->
+                    <RadioButton x:Name="over25RadioButton" Content="Drivers 25 or Older may purchase for 10% of vehicle price" VerticalAlignment="Center" GroupName="ageGroup"/>
+                </StackPanel>
+            </StackPanel>
+
+            <!-- Collection Date -->
+            <StackPanel Orientation="Horizontal" Margin="5" >
+                <TextBlock x:Name="collectionDateTextBlock" VerticalAlignment="Center" Text="Collection Date" Width="110"/>
+                <CalendarDatePicker x:Name="calendarDatePicker" Width="241"/>
+            </StackPanel>
+
+            <!-- Pickup Time -->
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock x:Name="pickupTimeTextBlock" VerticalAlignment="Center" Text="Pickup Time" Width="110"/>
+                <TimePicker x:Name="pickupTimePicker" VerticalAlignment="Center" />
+            </StackPanel>              
+
+
+            <!-- This StackPanel containing a TextBlock for displaying the summary details -->
+            <StackPanel>
+                <TextBlock x:Name="summaryTextBlock" HorizontalAlignment="Center" Margin="10" FontSize="16" Height="400" Text=""/>
+            </StackPanel>
+        </StackPanel>
+
+        <!-- This StackPanel contains all the buttons -->
+        <StackPanel>
+            <StackPanel Orientation="Vertical" Margin="10">
+                <Button x:Name="saveButton" Content="Save" Margin="10" Background="SeaGreen" Foreground="White" Width="160" Click="saveButton_Click"/>
+                <Button x:Name="resetButton" Content="Reset" Margin="10" Background="SeaGreen" Foreground="White" Width="160" Click="resetButton_Click"/>
+                <Button x:Name="summaryButton" Content="Summary" Margin="10" Background="SeaGreen" Foreground="White" Width="160" Click="summaryButton_Click"/>
+                <Button x:Name="displayAllCustomersButton" Content="Display All Customers" Margin="10" Background="SeaGreen" Foreground="White" Width="160" Click="displayAllCustomersButton_Click"></Button>
+                <Button x:Name="searchNameButton" Content="Search Name" Margin="10" Background="SeaGreen" Foreground="White" Width="160" Click="searchNameButton_Click"></Button>
+                <Button x:Name="deleteNameButton" Content="Delete Name" Margin="10" Background="SeaGreen" Foreground="White" Width="160" Click="deleteNameButton_Click"></Button>
+                <Button x:Name="displayAllMakesButton" Content="Display All Makes" Margin="10" Background="SeaGreen" Foreground="White" Width="160" Click="displayAllMakesButton_Click"></Button>
+                <Button x:Name="binarySearchMakeButton" Content="Binary Search Make" Margin="10" Background="SeaGreen" Foreground="White" Width="160" Click="binarySearchMakeButton_Click"></Button>
+                
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="insertVehicleMakeButton" Content="Insert Make" Margin="10" Background="SeaGreen" Foreground="White" Width="160" Click="insertMakeButton_Click"></Button>
+                    <TextBox Name="insertVehicleMakeTextBox" PlaceholderText="Enter vehicle make" Margin="10" Background="LightSeaGreen" Foreground="White" Width="160"/>
+                </StackPanel>                
+            </StackPanel>                
+
+
+            <StackPanel HorizontalAlignment="Center">
+                <!-- This StackPanel contains a car image that was required by the Dodgy Brothers & Developer Information -->
+                <StackPanel Margin="10">
+                    <Image x:Name="carImage" Source="Images\cars.jpg" Height="200" Width="280"/>
+                    <TextBlock x:Name="developerTextBlock" Text="Develop by Gerson Antunes, ITWorks." FontSize="8" HorizontalAlignment="Right"/>                        
+                </StackPanel>                  
+            </StackPanel>
+        </StackPanel>            
+    </StackPanel>
+  </Grid>
 </Page>
+
